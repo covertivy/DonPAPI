@@ -26,13 +26,8 @@ donpapi = 'donpapi.entry:main'
 dpp = 'donpapi.entry:main'
 
 [tool.poetry.dependencies]
-<<<<<<< HEAD
-python = "^3.9"
-impacket = "^0.12.0"
-=======
 python = "^3.10.0"
 impacket = ">=0.12.0"
->>>>>>> 61db37aaea1e1c9e9b6a02c640bf59f2a20840bc
 dploot = "^3.1.2"
 rich = "^13.7.0"
 sqlalchemy = "^2.0.25"
