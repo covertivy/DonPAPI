@@ -22,7 +22,7 @@ class Certificates:
 
     def run(self) -> None:
         self.logger.display(f"Dumping User{' and Machine' if self.context.remoteops_allowed else ''} Certificates")
-        certificates_triage = CertificatesTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys)
+        certificates_triage = CertificatesTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys, false_positive=self.false_positive)
         certificates = certificates_triage.triage_certificates()
         for certificate in certificates:
             cert_username = certificate.username.rstrip("\x00")

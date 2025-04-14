@@ -20,7 +20,7 @@ class CredMan:
 
     def run(self):
         self.logger.display(f"Dumping User{' and Machine' if self.context.remoteops_allowed else ''} Credential Manager")
-        credentials_triage = CredentialsTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys)
+        credentials_triage = CredentialsTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys, false_positive=self.false_positive)
         credentials = credentials_triage.triage_credentials()
         for credential in credentials:
             self.logger.secret(f"[{credential.winuser}] {credential.target} - {credential.username}:{credential.password}", self.tag)

@@ -20,7 +20,7 @@ class Vaults:
 
     def run(self):
         self.logger.display(f"Dumping User{' and Machine' if self.context.remoteops_allowed else ''} Vaults")
-        vaults_triage = VaultsTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys)
+        vaults_triage = VaultsTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys, false_positive=self.false_positive)
         vaults = vaults_triage.triage_vaults()
         
         for vault in vaults:

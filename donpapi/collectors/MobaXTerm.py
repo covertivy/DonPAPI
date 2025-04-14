@@ -21,7 +21,7 @@ class MobaXTerm:
     def run(self):
         if self.context.remoteops_allowed:
             self.logger.display("Dumping MobaXterm credentials")
-            mobaxterm_triage = MobaXtermTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys)
+            mobaxterm_triage = MobaXtermTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys, false_positive=self.false_positive)
             try:
                 _, credentials = mobaxterm_triage.triage_mobaxterm()
                 for credential in credentials:

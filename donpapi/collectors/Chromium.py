@@ -20,7 +20,7 @@ class Chromium:
 
     def run(self):
         self.logger.display("Dumping User Chromium Browsers")
-        browser_triage = BrowserTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys)
+        browser_triage = BrowserTriage(target=self.target, conn=self.conn, masterkeys=self.masterkeys, false_positive=self.false_positive)
         browser_credentials, cookies = browser_triage.triage_browsers(gather_cookies=True)
         for credential in browser_credentials:
             if isinstance(credential, LoginData):
